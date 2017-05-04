@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home_recommend"
+            android:checked="true"
+            android:icon="@drawable/ic_home_24dp"
+            android:title="@string/daily_read"/>
+        <item
+            android:id="@+id/nav_daily_read"
+            android:icon="@drawable/ic_daily_24dp"
+            android:title="@string/daily_one"/>
+        <item
+            android:id="@+id/nav_gank"
+            android:icon="@drawable/ic_goodwords_24dp"
+            android:title="@string/daily_nav_gank"/>
+    </group>
+
+    <item android:title="更多">
+        <menu>
+            <item
+                android:id="@+id/nav_stars"
+                android:icon="@drawable/ic_favorite_black_24dp"
+                android:title="@string/daily_stars"/>
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@drawable/ic_setting_24dp"
+                android:title="@string/daily_setting"/>
+
+        </menu>
+    </item>
+</menu>

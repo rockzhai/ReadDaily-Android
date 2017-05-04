@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">日读</string>
+    <string name="daily_read">每日推荐</string>
+    <string name="daily_one">每日一文</string>
+    <string name="daily_good_words">金句良语</string>
+    <string name="daily_nav_gank">干货妹知</string>
+
+
+    <string name="exit_text">再按一次退出程序</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="loadError">\"网络未连接请检查网络连接后重试</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="daily_stars">我的收藏</string>
+    <string name="daily_about">关于</string>
+    <string name="daily_setting">关于</string>
+    <string name="one_word">今番良晤 豪兴不浅 他日相逢 犹胜当年</string>
+    <string name="app_info">日读</string>
+
+
+
+    <string name="desc"> * 每日一读，干货集中营</string>
+    <string name="desc_api_gank"> * 干货妹知数据来自 Gank.io</string>
+    <string name="desc_dev"> * 整体开发基于 MVP+RxJava+Retrofit</string>
+    <string name="app_dev">开发</string>
+    <string name="desc_dev_1"> * 通过 Retrofit 实现无网缓存</string>
+    <string name="desc_dev_2"> * 基于 MVP 模式进行项目封装</string>
+    <string name="desc_dev_3"> * 通过 RecyclerView 加载多种复杂布局</string>
+    <string name="app_me">关于我</string>
+
+    <string name="api_info">备注：以上数据和开发只用做学习用途。</string>
+    <string name="me">技术宅，篮球迷，文艺梦</string>
+    <string name="app_content">联系我</string>
+</resources>

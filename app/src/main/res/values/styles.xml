@@ -36,6 +36,10 @@
         <item name="android:textSize">18sp</item>
     </style>
 
+    <!--SplashActivity-->
+    <style name="FullWindowTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
     <!--HeadLineStyle-->
     <style name="HeadLineStyle">
         <item name="android:layout_width">match_parent</item>

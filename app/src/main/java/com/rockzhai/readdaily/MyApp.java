@@ -12,7 +12,7 @@ import com.rockzhai.readdaily.util.DBOpenHelper;
 
 public class MyApp extends Application {
     public static final  String DB_NAME = "daily.db";
-
+    public static final  String SP_NAME = "daily_sp";
     public static Context mContext;
     public static DBOpenHelper dbOpenHelper;
     @Override

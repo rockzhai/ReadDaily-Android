@@ -1,6 +1,8 @@
 package com.rockzhai.readdaily.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,24 +31,37 @@ import java.util.ArrayList;
 
 public class MainActivity extends MVPBaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
-    private TextView textView;
+    public static final String READNUM = "readnum";
+    private static TextView readNum;
     private FrameLayout contentFrame;
     private NavigationView leftDraw;
     private DrawerLayout mainDrawLayout;
     private ActionBarDrawerToggle toggle;
     private Toolbar mToolbar;
+    private static SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // setContentView(R.layout.activity_main);
+        sp = getSharedPreferences(MyApp.SP_NAME, Context.MODE_PRIVATE);
         mainDrawLayout = (DrawerLayout) findViewById(R.id.main_draw_layout);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         leftDraw = (NavigationView) findViewById(R.id.left_draw);
         contentFrame = (FrameLayout) findViewById(R.id.content_frame);
         initDrawerView();
         getSupportFragmentManager().beginTransaction().add(R.id.content_frame, new ReDailyFragment()).commit();
+        View headView = leftDraw.inflateHeaderView(R.layout.activity_view_nav_header_main);
+        readNum = (TextView) headView.findViewById(R.id.reading_nums);
+    }
+
+    public static void updateReadNum(int i) {
+        int j = 0;
+        j=sp.getInt(READNUM, 0);
+        i = i + j;
+        sp.edit().putInt(READNUM, i).commit();
+        readNum.setText("阅读量:" + i);
+
     }
 
     @Override
@@ -93,7 +109,7 @@ public class MainActivity extends MVPBaseActivity implements NavigationView.OnNa
             case R.id.nav_stars:
 //                ArrayList<EssayForDB> arrayList = DBUtils.query(MyApp.dbOpenHelper);
 //                Log.e("arraylist++++++++++",arrayList.get(0).getDigest());
-                startActivity(new Intent(MainActivity.this,FavListActivity.class));
+                startActivity(new Intent(MainActivity.this, FavListActivity.class));
                 break;
         }
         return true;

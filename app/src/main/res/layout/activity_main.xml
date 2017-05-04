@@ -30,6 +30,6 @@
         android:layout_gravity="start"
         android:background="#fff"
         app:menu="@menu/activity_main_drawer"
-        app:headerLayout="@layout/activity_view_nav_header_main"/>
+        />
 
 </android.support.v4.widget.DrawerLayout>

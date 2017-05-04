@@ -19,11 +19,7 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:theme="@style/MainTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.GankActivity"
@@ -44,6 +40,15 @@
             android:name=".ui.activity.EssayActivity"
             android:theme="@style/MainTheme">
 
+        </activity>
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:theme="@style/FullWindowTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.rockzhai.readdaily.MyApp;
 import com.rockzhai.readdaily.R;
 import com.rockzhai.readdaily.bean.Essay.Essay;
+import com.rockzhai.readdaily.ui.activity.MainActivity;
 import com.rockzhai.readdaily.ui.base.BasePresenter;
 import com.rockzhai.readdaily.ui.view.IDailyFgView;
 import com.rockzhai.readdaily.ui.view.IReDailyFgView;
@@ -60,7 +61,7 @@ public class ReDailyFgPresenter extends BasePresenter<IReDailyFgView> {
         author.setText("作者："+essay.getData().getAuthor());
         content.setText(Html.fromHtml(essay.getData().getContent()));
         dailyFgView.setDataRefresh(false);
-
+        MainActivity.updateReadNum(essay.getData().getWc());
         saveEssay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

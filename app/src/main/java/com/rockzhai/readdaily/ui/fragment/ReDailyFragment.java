@@ -2,6 +2,7 @@ package com.rockzhai.readdaily.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,29 +16,30 @@ import com.rockzhai.readdaily.ui.view.IReDailyFgView;
  * Contact Me : zhaidyan@gmail.com
  */
 
-public class RecommendFragment extends MVPBaseFragment<IReDailyFgView, ReDailyFgPresenter> implements IReDailyFgView{
-    private View rootView;
+public class ReDailyFragment extends MVPBaseFragment<IReDailyFgView, ReDailyFgPresenter> implements IReDailyFgView{
     private TextView title, author, content;
+    private FloatingActionButton saveEssay;
 
     @Override
     protected void initView(View rootView) {
         title = (TextView) rootView.findViewById(R.id.essay_title);
         author = (TextView) rootView.findViewById(R.id.essay_author);
         content = (TextView) rootView.findViewById(R.id.essay_content);
+        saveEssay = (FloatingActionButton) rootView.findViewById(R.id.save_essay);
     }
 
     @Override
     public void requestDataRefresh() {
         super.requestDataRefresh();
         setDataRefresh(true);
-        mPresenter.getDailyData();
+        mPresenter.getReDailyData();
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRefresh(true);
-        mPresenter.getDailyData();
+        mPresenter.getReDailyData();
     }
 
     @Override
@@ -68,5 +70,10 @@ public class RecommendFragment extends MVPBaseFragment<IReDailyFgView, ReDailyFg
     @Override
     public TextView getContentView() {
         return content;
+    }
+
+    @Override
+    public FloatingActionButton getSaveEssaybtn() {
+        return saveEssay;
     }
 }

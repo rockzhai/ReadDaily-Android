@@ -86,7 +86,7 @@ public class GankListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             });
             // card 点击事件
             mCardView_meizhi.setOnClickListener(v -> {
-                Toast.makeText(context, "点击事件测试", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context, "点击事件测试", Toast.LENGTH_SHORT).show();
                 Intent intent = GankActivity.newIntent(context,meizhi.getPublishedAt().getTime());
                 context.startActivity(intent);
             });

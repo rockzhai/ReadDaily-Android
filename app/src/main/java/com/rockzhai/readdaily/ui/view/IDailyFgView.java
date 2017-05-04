@@ -1,5 +1,6 @@
 package com.rockzhai.readdaily.ui.view;
 
+import android.support.design.widget.FloatingActionButton;
 import android.widget.TextView;
 
 /**
@@ -12,4 +13,5 @@ public interface IDailyFgView {
     TextView getTitleView();
     TextView getAuthorView();
     TextView getContentView();
+    FloatingActionButton getSaveEssaybtn();
 }

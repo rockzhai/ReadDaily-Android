@@ -1,59 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/gery"
     android:orientation="vertical">
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="50dp"
-            android:id="@+id/eassy_layout"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/essay_title"
+            <LinearLayout
+                android:id="@+id/eassy_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:textSize="24dp" />
+                android:layout_margin="6dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/white"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                android:paddingBottom="50dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_margin="4dp"
-                android:background="#33000000" />
+                <TextView
+                    android:id="@+id/essay_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textSize="24dp" />
 
-            <TextView
-                android:id="@+id/essay_author"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="5dp"
-                android:textSize="14dp"
-                android:gravity="center"
-                android:text="" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="4dp"
+                    android:background="#33000000" />
 
-            <TextView
-                android:id="@+id/essay_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="18dp"
-                android:layout_marginTop="5dp"
-                android:textSize="16dp"/>
-        </LinearLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/essay_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text=""
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/essay_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+        </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
-</LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/save_essay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="81dp"
+        android:layout_marginEnd="36dp"
+        android:clickable="true"
+        android:elevation="4dp"
+        android:src="@drawable/ic_favorite_white_24dp"
+        app:backgroundTint="@color/colorAccent"
+        app:borderWidth="0dp"
+        app:elevation="4dp" />
+</RelativeLayout>

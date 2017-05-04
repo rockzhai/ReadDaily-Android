@@ -35,4 +35,6 @@
     <string name="api_info">备注：以上数据和开发只用做学习用途。</string>
     <string name="me">技术宅，篮球迷，文艺梦</string>
     <string name="app_content">联系我</string>
+    <string name="fav_failed_alreadyfav">您已经收藏过了，请勿重新收藏！</string>
+    <string name="fav_successed">收藏成功！</string>
 </resources>

@@ -2,6 +2,7 @@ package com.rockzhai.readdaily.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +21,13 @@ import com.rockzhai.readdaily.ui.view.IDailyFgView;
 
 public class DailyFragment extends MVPBaseFragment<IDailyFgView,DailyFgPresenter> implements IDailyFgView{
     private TextView title,author,content;
-
+    private FloatingActionButton saveEssay;
     @Override
     protected void initView(View rootView) {
         title = (TextView) rootView.findViewById(R.id.essay_title);
         author = (TextView) rootView.findViewById(R.id.essay_author);
         content = (TextView) rootView.findViewById(R.id.essay_content);
+        saveEssay = (FloatingActionButton) rootView.findViewById(R.id.save_essay);
     }
 
     @Override
@@ -70,5 +72,10 @@ public class DailyFragment extends MVPBaseFragment<IDailyFgView,DailyFgPresenter
     @Override
     public TextView getContentView() {
         return content;
+    }
+
+    @Override
+    public FloatingActionButton getSaveEssaybtn() {
+        return saveEssay;
     }
 }

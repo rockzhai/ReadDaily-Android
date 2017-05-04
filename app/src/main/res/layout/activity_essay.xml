@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/eassy_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="50dp"
-            android:id="@+id/eassy_layout"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="50dp">
 
             <TextView
                 android:id="@+id/essay_title"
@@ -42,9 +38,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="5dp"
-                android:textSize="14dp"
                 android:gravity="center"
-                android:text="" />
+                android:text=""
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/essay_content"
@@ -52,13 +48,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="18dp"
                 android:layout_marginTop="5dp"
-                android:textSize="16dp"/>
+                android:textSize="16dp" />
         </LinearLayout>
     </ScrollView>
-    </android.support.v4.widget.SwipeRefreshLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/save_essay"
+        android:id="@+id/del_essay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -68,7 +63,7 @@
         android:layout_marginEnd="36dp"
         android:clickable="true"
         android:elevation="4dp"
-        android:src="@drawable/ic_favorite_white_24dp"
+        android:src="@drawable/ic_clear_white_24dp"
         app:backgroundTint="@color/colorAccent"
         app:borderWidth="0dp"
         app:elevation="4dp" />

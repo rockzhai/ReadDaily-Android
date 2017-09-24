@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">日读</string>
+    <string name="app_name">只读</string>
     <string name="daily_read">每日推荐</string>
     <string name="daily_one">每日一文</string>
     <string name="daily_good_words">金句良语</string>
@@ -19,22 +19,26 @@
     <string name="daily_about">关于</string>
     <string name="daily_setting">关于</string>
     <string name="one_word">今番良晤 豪兴不浅 他日相逢 犹胜当年</string>
-    <string name="app_info">日读</string>
+    <string name="app_info">读*毒</string>
 
 
 
-    <string name="desc"> * 每日一读，干货集中营</string>
+    <string name="desc"> * 每日一读，干货集中营， 阅读是毒</string>
     <string name="desc_api_gank"> * 干货妹知数据来自 Gank.io</string>
     <string name="desc_dev"> * 整体开发基于 MVP+RxJava+Retrofit</string>
     <string name="app_dev">开发</string>
     <string name="desc_dev_1"> * 通过 Retrofit 实现无网缓存</string>
     <string name="desc_dev_2"> * 基于 MVP 模式进行项目封装</string>
     <string name="desc_dev_3"> * 通过 RecyclerView 加载多种复杂布局</string>
+    <string name="desc_dev_4">* 通过 Jsoup 实现网页解析</string>
+    <string name="desc_dev_5">* 特别感谢 darkeet、Werb 等开源项目</string>
     <string name="app_me">关于我</string>
 
     <string name="api_info">备注：以上数据和开发只用做学习用途。</string>
-    <string name="me">技术宅，篮球迷，文艺梦</string>
+    <string name="me">* 技术宅，篮球迷，文艺梦</string>
     <string name="app_content">联系我</string>
     <string name="fav_failed_alreadyfav">您已经收藏过了，请勿重新收藏！</string>
     <string name="fav_successed">收藏成功！</string>
+
+    <string name="me_dec_2">* 坐标深圳 欢迎面基</string>
 </resources>

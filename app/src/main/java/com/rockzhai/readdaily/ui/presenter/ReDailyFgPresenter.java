@@ -10,12 +10,21 @@ import android.widget.Toast;
 import com.rockzhai.readdaily.MyApp;
 import com.rockzhai.readdaily.R;
 import com.rockzhai.readdaily.bean.Essay.Essay;
+import com.rockzhai.readdaily.bean.Essay.EssayForDB;
 import com.rockzhai.readdaily.ui.activity.MainActivity;
 import com.rockzhai.readdaily.ui.base.BasePresenter;
 import com.rockzhai.readdaily.ui.view.IDailyFgView;
 import com.rockzhai.readdaily.ui.view.IReDailyFgView;
 import com.rockzhai.readdaily.util.DBUtils;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
+import java.io.IOException;
+
+import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
@@ -26,7 +35,7 @@ import rx.schedulers.Schedulers;
 
 public class ReDailyFgPresenter extends BasePresenter<IReDailyFgView> {
     private Context context;
-    private Essay essay;
+    private EssayForDB essay;
     private IReDailyFgView iReDailyFgView;
     private TextView title, author, content;
     private FloatingActionButton saveEssay;
@@ -44,36 +53,55 @@ public class ReDailyFgPresenter extends BasePresenter<IReDailyFgView> {
             content = iReDailyFgView.getContentView();
             saveEssay = iReDailyFgView.getSaveEssaybtn();
 
-            dailyApi.getDailyRssayRandom()
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(essay2 -> displayEssay(essay2, iReDailyFgView, title, author, content), this::loadError);
+            essay = new EssayForDB();
+
+            Observable.create((Observable.OnSubscribe<Document>) subscriber -> {
+                try {
+                    Document document = Jsoup.connect("https://meiriyiwen.com/random").get();
+                    subscriber.onNext(document);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    subscriber.onNext(null);
+                    loadError(e);
+                    iReDailyFgView.setDataRefresh(false);
+                }
+            }).subscribeOn(Schedulers.io()).observeOn(Schedulers.computation()).doOnNext(document -> {
+                Element docContent = document.getElementById("article_show");
+
+                essay.setTitle(document.select("h1").text());
+                essay.setAuthor(document.getElementsByClass("article_author").text());
+                essay.setContent(document.getElementsByClass("article_text").toString());
+                essay.setDigest(document.getElementsByClass("article_text").text().substring(0,48));
+
+                // str = docContent.text();
+            }).observeOn(AndroidSchedulers.mainThread()).subscribe(document -> {
+                displayEssay(essay,iReDailyFgView,title,author,content);
+                iReDailyFgView.setDataRefresh(false);
+            });
         }
     }
 
     private void loadError(Throwable throwable) {
         throwable.printStackTrace();
         Toast.makeText(context, R.string.loadError, Toast.LENGTH_SHORT).show();
+        iReDailyFgView.setDataRefresh(false);
     }
 
-    private void displayEssay(Essay essay, IReDailyFgView dailyFgView, TextView title, TextView author, TextView content) {
-        title.setText(essay.getData().getTitle());
-        author.setText("作者："+essay.getData().getAuthor());
-        content.setText(Html.fromHtml(essay.getData().getContent()));
+    private void displayEssay(EssayForDB essay, IReDailyFgView dailyFgView, TextView title, TextView author, TextView content) {
+        title.setText(essay.getTitle());
+        author.setText("作者："+essay.getAuthor());
+        content.setText(Html.fromHtml(essay.getContent()));
         dailyFgView.setDataRefresh(false);
-        MainActivity.updateReadNum(essay.getData().getWc());
-        saveEssay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean b = DBUtils.insert(MyApp.dbOpenHelper, essay.getData().getTitle(), essay.getData().getAuthor(),essay.getData().getDigest(), essay.getData().getContent());
+        MainActivity.updateReadNum(essay.getContent().length());
+        saveEssay.setOnClickListener(v -> {
+            boolean b = DBUtils.insert(MyApp.dbOpenHelper, essay.getTitle(), essay.getAuthor(),essay.getDigest(), essay.getContent());
 
-                if (b) {
-                    Toast.makeText(context, R.string.fav_successed, Toast.LENGTH_SHORT).show();
+            if (b) {
+                Toast.makeText(context, R.string.fav_successed, Toast.LENGTH_SHORT).show();
 
-                } else {
-                    Toast.makeText(context, R.string.fav_failed_alreadyfav, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, R.string.fav_failed_alreadyfav, Toast.LENGTH_SHORT).show();
 
-                }
             }
         });
     }

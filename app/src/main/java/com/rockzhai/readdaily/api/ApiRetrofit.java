@@ -58,7 +58,6 @@ public class ApiRetrofit {
                 request = request.newBuilder()
                         .cacheControl(cacheControl)
                         .build();
-
             }
             Response originalResponse = chain.proceed(request);
             if (StateUtils.isNetworkAvailable(MyApp.mContext)) {

@@ -10,7 +10,7 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        d:layout_height="match_parent">
+
 
         <!-- AppBar -->
         <android.support.design.widget.AppBarLayout
@@ -39,7 +39,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/me_bg"
+                    android:background="@drawable/daily_pic"
                     android:scaleType="centerCrop"
                     app:layout_collapseMode="parallax"
                     app:layout_collapseParallaxMultiplier="1.0">
@@ -50,7 +50,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="120dp"
                         android:gravity="center"
-                        android:textSize="16dp"
+                        android:textSize="17dp"
                         android:text="@string/one_word"
                         android:textColor="@color/black" />
 
@@ -92,18 +92,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:paddingLeft="10dp"
-                    android:text="@string/desc_api_gank"
+                    android:text="* 每日一文数据来源自网络"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:paddingLeft="10dp"
-                    android:text="@string/desc_api_gank"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -154,6 +146,14 @@
                     android:text="@string/desc_dev_2"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingLeft="10dp"
+                    android:text="@string/desc_dev_4"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -161,6 +161,15 @@
                     android:layout_marginBottom="20dp"
                     android:paddingLeft="10dp"
                     android:text="@string/desc_dev_3"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingLeft="10dp"
+                    android:text="@string/desc_dev_5"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 
@@ -177,6 +186,15 @@
                     android:layout_marginBottom="20dp"
                     android:paddingLeft="10dp"
                     android:text="@string/me"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:paddingLeft="10dp"
+                    android:text="@string/me_dec_2"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
 

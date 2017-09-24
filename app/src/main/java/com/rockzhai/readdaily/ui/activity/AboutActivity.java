@@ -1,6 +1,7 @@
 package com.rockzhai.readdaily.ui.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -38,7 +39,8 @@ public class AboutActivity extends MVPBaseActivity{
 
     private void initView() {
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsingToolbarLayout);
-        collapsingToolbarLayout.setTitle("很高兴你能看到这里");
+        collapsingToolbarLayout.setTitle("欢迎 | 有梦");
+        collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(R.color.coll_color));
         tv_blog = (TextView) findViewById(R.id.tv_blog);
         tv_github = (TextView) findViewById(R.id.tv_github);
 

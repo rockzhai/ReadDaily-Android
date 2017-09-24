@@ -18,32 +18,40 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activity.MainActivity"
-            android:theme="@style/MainTheme">
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".ui.activity.GankActivity"
-            android:theme="@style/MainTheme" />
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.GankWebViewActivity"
-            android:theme="@style/MainTheme" />
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.PictureActivity"
-            android:theme="@style/MainTheme"></activity>
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activity.AboutActivity"
-            android:theme="@style/MainTheme" />
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FavListActivity"
-            android:theme="@style/MainTheme" />
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.EssayActivity"
-            android:theme="@style/MainTheme">
+            android:theme="@style/MainTheme"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
             android:name=".ui.activity.SplashActivity"
-            android:theme="@style/FullWindowTheme" >
+            android:theme="@style/FullWindowTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

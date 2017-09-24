@@ -10,9 +10,9 @@ import rx.Observable;
  */
 
 public interface DailyApi {
-    @GET("article/today?dev=1")
+    @GET("article/day?dev=1")
     Observable<Essay> getDailyEssay();
-    @GET("article/random?dev=1")
+    @GET("article/random?dev=2")
     Observable<Essay> getDailyRssayRandom();
 
 }

@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_margin="4dp"
-                android:background="#33000000" />
+                android:background="@color/divider" />
 
             <TextView
                 android:id="@+id/essay_author"

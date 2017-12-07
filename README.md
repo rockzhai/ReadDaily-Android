@@ -1,13 +1,22 @@
 # ReadDaily
 基于 MVP+Retrofit+RxJava+Jsoup+Glide 开发阅读小应用
+
 v 0.8 已实现功能
+
 实现 MVP+RxJava+Retrofit 整体框架
+
 实现 Retrofit+OkHttp 缓存妹纸板块数据
+
 使用 Jsoup 进行网页解析
+
 SqlLite 实现文章收藏功能
+
 使用 RecycleView 灵活加载布局
+
 采用 MD 设计风格、DrawLayout 抽屉菜单
+
 数据来源
+
 Gank.io & meiriyiwen.com
 
 2017年4月份做的毕业设计，开源出来希望能和大家共同进步

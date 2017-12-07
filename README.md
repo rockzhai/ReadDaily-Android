@@ -1,5 +1,6 @@
 # ReadDaily
-基于 MVP+Retrofit+RxJava 阅读应用
+基于 MVP+Retrofit+RxJava+Jsoup+Glide 开发
+
 
 More to do...
 

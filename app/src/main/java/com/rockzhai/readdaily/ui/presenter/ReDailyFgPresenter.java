@@ -58,7 +58,8 @@ public class ReDailyFgPresenter extends BasePresenter<IReDailyFgView> {
             Observable.create((Observable.OnSubscribe<Document>) subscriber -> {
                 try {
                     Document document = Jsoup.connect("https://meiriyiwen.com/random").get();
-                    subscriber.onNext(document);
+                        subscriber.onNext(document);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                     subscriber.onNext(null);
@@ -71,11 +72,11 @@ public class ReDailyFgPresenter extends BasePresenter<IReDailyFgView> {
                 essay.setTitle(document.select("h1").text());
                 essay.setAuthor(document.getElementsByClass("article_author").text());
                 essay.setContent(document.getElementsByClass("article_text").toString());
-                essay.setDigest(document.getElementsByClass("article_text").text().substring(0,48));
+                essay.setDigest(document.getElementsByClass("article_text").text().substring(0, 48));
 
                 // str = docContent.text();
             }).observeOn(AndroidSchedulers.mainThread()).subscribe(document -> {
-                displayEssay(essay,iReDailyFgView,title,author,content);
+                displayEssay(essay, iReDailyFgView, title, author, content);
                 iReDailyFgView.setDataRefresh(false);
             });
         }
@@ -89,12 +90,12 @@ public class ReDailyFgPresenter extends BasePresenter<IReDailyFgView> {
 
     private void displayEssay(EssayForDB essay, IReDailyFgView dailyFgView, TextView title, TextView author, TextView content) {
         title.setText(essay.getTitle());
-        author.setText("作者："+essay.getAuthor());
+        author.setText("作者：" + essay.getAuthor());
         content.setText(Html.fromHtml(essay.getContent()));
         dailyFgView.setDataRefresh(false);
         MainActivity.updateReadNum(essay.getContent().length());
         saveEssay.setOnClickListener(v -> {
-            boolean b = DBUtils.insert(MyApp.dbOpenHelper, essay.getTitle(), essay.getAuthor(),essay.getDigest(), essay.getContent());
+            boolean b = DBUtils.insert(MyApp.dbOpenHelper, essay.getTitle(), essay.getAuthor(), essay.getDigest(), essay.getContent());
 
             if (b) {
                 Toast.makeText(context, R.string.fav_successed, Toast.LENGTH_SHORT).show();

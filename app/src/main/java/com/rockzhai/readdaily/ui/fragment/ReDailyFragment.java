@@ -5,11 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rockzhai.readdaily.R;
+import com.rockzhai.readdaily.ui.activity.MainActivity;
 import com.rockzhai.readdaily.ui.base.MVPBaseFragment;
 import com.rockzhai.readdaily.ui.presenter.ReDailyFgPresenter;
 import com.rockzhai.readdaily.ui.view.IReDailyFgView;
+import com.rockzhai.readdaily.util.StateUtils;
 
 /**
  * Created by rockzhai on 2017/5/1.
@@ -32,14 +35,32 @@ public class ReDailyFragment extends MVPBaseFragment<IReDailyFgView, ReDailyFgPr
     public void requestDataRefresh() {
         super.requestDataRefresh();
         setDataRefresh(true);
-        mPresenter.getReDailyData();
+        if (StateUtils.isNetworkAvailable(getContext())) {
+            mPresenter.getReDailyData();
+        }else {
+            setDataRefresh(false);
+            if (content.getText().toString()=="") {
+                content.setText("网络无连接，请检查网络后重试");
+            }
+            Toast.makeText(getContext(), "网络无连接，请检查网络后重试", Toast.LENGTH_SHORT).show();
+
+        }
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRefresh(true);
-        mPresenter.getReDailyData();
+        if (StateUtils.isNetworkAvailable(getContext())) {
+            mPresenter.getReDailyData();
+        }else {
+            setDataRefresh(false);
+            if (content.getText().toString()=="") {
+                content.setText("网络无连接，请检查网络后重试");
+            }
+            Toast.makeText(getContext(), "网络无连接，请检查网络后重试", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -76,4 +97,5 @@ public class ReDailyFragment extends MVPBaseFragment<IReDailyFgView, ReDailyFgPr
     public FloatingActionButton getSaveEssaybtn() {
         return saveEssay;
     }
+
 }

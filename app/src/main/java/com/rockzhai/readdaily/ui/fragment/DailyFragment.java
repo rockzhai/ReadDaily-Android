@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rockzhai.readdaily.R;
 import com.rockzhai.readdaily.ui.base.MVPBaseFragment;
 import com.rockzhai.readdaily.ui.presenter.DailyFgPresenter;
 import com.rockzhai.readdaily.ui.view.IDailyFgView;
+import com.rockzhai.readdaily.util.StateUtils;
 
 /**
  * Created by rockzhai on 2017/5/1.
@@ -34,14 +36,32 @@ public class DailyFragment extends MVPBaseFragment<IDailyFgView,DailyFgPresenter
     public void requestDataRefresh() {
         super.requestDataRefresh();
         setDataRefresh(true);
-        mPresenter.getDailyData();
+
+        if (StateUtils.isNetworkAvailable(getContext())) {
+            mPresenter.getDailyData();
+        }else {
+            setDataRefresh(false);
+            if (content.getText().toString()=="") {
+                content.setText("网络无连接，请检查网络后重试");
+            }
+            Toast.makeText(getContext(), "网络无连接，请检查网络后重试", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         setRefresh(true);
-        mPresenter.getDailyData();
+        if (StateUtils.isNetworkAvailable(getContext())) {
+            mPresenter.getDailyData();
+        }else {
+            setDataRefresh(false);
+            if (content.getText().toString()=="") {
+                content.setText("网络无连接，请检查网络后重试");
+            }
+            Toast.makeText(getContext(), "网络无连接，请检查网络后重试", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

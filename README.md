@@ -24,13 +24,13 @@ Gank.io & meiriyiwen.com
 后续有时间会继续优化
 
 ## 应用截图
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/splash.jpg" width = "360" height = "590" alt="1" align=left />
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/main_new.png" width = "360" height = "590" alt="2" align=center />
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/daily.jpg" width = "360" height = "590" alt="3" align=left />
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/meizhi.jpg" width = "360" height = "590" alt="4" align=center />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/splash.jpg" width = "360" height = "600" alt="1" align=left />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/main_new.png" width = "360" height = "600" alt="2" align=center />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/daily.jpg" width = "360" height = "600" alt="3" align=left />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/meizhi.jpg" width = "360" height = "600" alt="4" align=center />
 
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/collection.jpg" width = "360" height = "590" alt="5" align=left />
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/delete.jpg" width = "360" height = "590" alt="6" align=center />
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/about_1.jpg" width = "360" height = "590" alt="7" align=left />
-<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/about_2.jpg" width = "360" height = "590" alt="8" align=center />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/collection.jpg" width = "360" height = "600" alt="5" align=left />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/delete.jpg" width = "360" height = "600" alt="6" align=center />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/about_1.jpg" width = "360" height = "600" alt="7" align=left />
+<img src="https://github.com/rockzhai/ReadDaily/blob/master/screenshot/about_2.jpg" width = "360" height = "600" alt="8" align=center />
 
